@@ -1,0 +1,20 @@
+body {
+    background-color: #F3F5FC;
+}
+
+.presentacion_botones {
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+.footer {
+    background-color: #609ED4;
+    padding: 1.5rem;
+    color: black;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
