@@ -8,13 +8,17 @@
 </head>
 <body>
     <h1>Encriptador</h1>
-    <input type="text" id="Encriptador" name="Encriptador_name">
+    <input type="text" id="textoEntrada" name="Encriptador_name" placeholder="Ingrese el texto aquí">
     <div class="presentacion_botones">
-        <button class="button" type="button" onclick="alert('Encriptando...')">Encriptar</button>
-        <button class="button" type="button" onclick="alert('Desencriptando...')">Desencriptar</button>
+        <button class="button" type="button" onclick="encriptarTexto()">Encriptar</button>
+        <button onclick="desencriptarTexto()">Desencriptar</button>
+        <button onclick="copiarTexto()">Copiar Texto</button>
+        <img src="/img/msgNotFound.png" alt="Una persona mirando a la izquierda" class="container__imagen-persona" />
+        <p class="textoResultado" id="textoResultado" style="display: none;"></p>
     </div>
     <footer class="footer">
-        <p>Desarrollado por Dylann Bezares</p>
+        <p>Creado por: Dylann Bezares - Año: 2024</p>
     </footer>
+    <script src="app.js"></script>
 </body>
 </html>
