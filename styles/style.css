@@ -94,11 +94,6 @@
     width: 336px;
 }
 
-#textoEntrada {
-    width: 100%;
-    height: 150px;
-}
-
 .textoResultado {
     display: none;
     border: 2px solid #000; /* Borde del rectángulo */

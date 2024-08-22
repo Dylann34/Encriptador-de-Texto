@@ -40,7 +40,7 @@ function mostrarResultado(texto) {
 }
 
 function copiarTexto() {
-    const textoParaCopiar = document.getElementById("textoResultado").innerText;
+    const textoParaCopiar = document.getElementById("textoResultado").value;
     navigator.clipboard.writeText(textoParaCopiar).then(() => {
         alert("Texto copiado al portapapeles");
     }).catch(err => {
