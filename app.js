@@ -1,3 +1,6 @@
+const textArea = document.querySelector(".text-area");
+const mensaje = document.querySelector(".mensaje");
+
 function encriptarTexto() {
     let texto = document.getElementById("textoEntrada").value;
     // Validar solo letras minúsculas sin acentos ni caracteres especiales
@@ -8,6 +11,8 @@ function encriptarTexto() {
                                    .replace(/o/g, "ober")
                                    .replace(/u/g, "ufat");
         mostrarResultado(textoEncriptado);
+        textoEncriptado.value = "";
+        mensaje.style.backgroundImage = "none";
     } else {
         alert("El texto solo debe contener letras minúsculas sin acentos ni caracteres especiales.");
     }
