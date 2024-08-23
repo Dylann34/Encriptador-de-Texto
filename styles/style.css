@@ -1,9 +1,10 @@
 * {
     background: #F3F5FC;
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 32px;
     line-height: 150%;
+    box-sizing: border-box;
 }
 
 .logo {
@@ -13,23 +14,29 @@
 }
 
 .presentacion {
-    padding: 2% 15%;
+    padding: 2% 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 82px;
+    gap: 40px;
+    flex-wrap: wrap;
     margin-bottom: 50px;
-    margin-left: 80px;
+    margin-left: 0;
 }
 
 .text-area {
     border: none;
     color: #0A3871;
-    margin-top: 90px;
+    margin-top: 40px;
     text-transform: lowercase;
+    width: 100%;
+    max-width: 500px;
+    
 }
 
-::placeholder { color: #0A3871 }
+::placeholder { 
+    color: #0A3871;
+}
 .text-area:focus {
     outline: none;
 }
@@ -38,14 +45,19 @@
     background: white;
     background-image: url("/img/Muñeco.png");
     background-repeat: no-repeat;
+    background-position: center;
     border: none;
     border-radius: 32px;
     color: #0A3871;
-    margin-left: 60px;
     margin-top: 20px;
-    padding-left: 20px;
-    position: fixed;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    min-height: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
 }
+
 .mensaje:focus {
     outline: none;
 }
@@ -53,60 +65,134 @@
 .buttons {
     display: flex;
     margin-top: 18px;
-    
+    gap: 20px;
 }
 
-.btn-encriptar {
+.btn-encriptar, .btn-desencriptar, .btn-copiar {
     background-color: #0A3871;
     border: 1px solid #0A3871;
     border-radius: 24px;
     color: white;
     cursor: pointer;
     height: 67px;
-    width: 328px;
+    width: 100%;
+    max-width: 328px;
+    margin-top: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Efecto de sombra */
+    transition: box-shadow 0.3s ease; /* Suaviza la transición de la sombra */
 }
 
 .btn-desencriptar {
     background-color: #D8DFE8;
-    border: 1px solid #0A3871;
-    border-radius: 24px;
     color: #0A3871;
-    cursor: pointer;
-    height: 67px;
-    margin-left: 30px;
-    width: 328px;
+}
+
+/* Efecto hover */
+.btn-encriptar:hover, .btn-desencriptar:hover, .btn-copiar:hover {
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el mouse */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+}
+
+/* Efecto clic */
+.btn-encriptar:active, .btn-desencriptar:active, .btn-copiar:active {
+    transform: scale(0.95); /* Hace un ligero efecto de reducción al hacer clic */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Reduce un poco la sombra para dar sensación de presión */
+}
+
+.btn-copiar{
+    position: absolute;
 }
 
 .informacion {
     color: #495057;
     font-size: 18px;
-}
-
-.btn-copiar {
-    border: 1px solid #0A3871;
-    border-radius: 24px;
-    color: white;
-    cursor: pointer;
-    height: 67px;
-    margin-left: 100px;
-    margin-top: 402px;
-    position: absolute;
-    width: 336px;
-}
-
-.textoResultado {
-    display: none;
-    border: 2px solid #000; /* Borde del rectángulo */
-    padding: 10px; /* Espacio dentro del rectángulo */
-    width: 400px; /* Ancho del rectángulo */
-    height: 944px;
-    margin-top: 20px; /* Espacio arriba del rectángulo */
-    background-color: #f4f4f4; /* Color de fondo del rectángulo */
-    border-radius: 32px; /* Bordes redondeados */
+    margin-top: 10px;
 }
 
 .footer {
-    padding: 1.5rem;
+    background-color: #AAB2D5;
+    color: black;
+    padding: 20px 10%;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    margin-top: 50px;
+    position: relative;
+    
+}
+
+.footer::before {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 2px;
+    background-color: #D8DFE8;
+    margin: 0 auto 20px;
+}
+
+.footer p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.footer a {
+    color: #D8DFE8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #F3F5FC;
+}
+
+@media (max-width: 768px) {
+    .presentacion {
+        flex-direction: column;
+        align-items: center;
+        padding: 2%;
+    }
+
+    .logo {
+        width: 30%;
+    }
+
+    .mensaje, .text-area {
+        margin-top: 20px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .btn-encriptar, .btn-desencriptar {
+        width: 100%;
+        max-width: 328px;
+    }
+}
+
+@media (max-width: 480px) {
+    * {
+        font-size: 24px;
+    }
+
+    .btn-encriptar, .btn-desencriptar, .btn-copiar {
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .informacion {
+        font-size: 16px;
+    }
+
+    .footer {
+        padding: 20px 5%;
+    }
+
+    .footer::before {
+        width: 90%;
+    }
 }
